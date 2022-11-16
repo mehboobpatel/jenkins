@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <style>
+            
+            label {
+    display: inline-block;
+    width: 208px;
+    text-align: right;
+    color: #3843cf;
+}
+img {
+
+  padding: 5px;
+  width: 15px;
+  display: inline-block;
+}
+      input {
+        padding: 5px 10px;
+      }
+    </style>
+        </style>
+        <meta charset="utf-8">
+        <title>Diabetes Detector</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Detector</span></h2>
+            <div class='description'>
+    			<p>It's just a prediction; do consult with a Doctor 😊</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+        <label for="pregnancies">Number of Pregnancies :</label> 
+        <input class="form-input" type="text" name="pregnancies" placeholder="eg. 0">
+        <img src="static/info.png" data-toggle="tooltip" title="During pregnancy, your placenta makes hormones that cause glucose to build up in your blood.
+But if your body can't make enough insulin, your blood sugar levels rise, and you get gestational diabetes.">
+<br>
+        <label for="glucose">Glucose (mg/dL) :</label> 
+        <input class="form-input" type="text"  name="glucose" placeholder="eg. 80">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="Some common tests include a fasting sugar test, post-meal test, and HbA1c.
+For the fasting sugar test, 70-100 mg/dl value is a normal range. For the post-meal test, 
+below 140 mg/dl value after two hours of consuming glucose">
+        <br>
+        <label for="bloodpressure">Blood Pressure (mmHg) :</label> 
+        <input class="form-input" type="text" name="bloodpressure" placeholder="eg. 80">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="The top number (systolic) is the force applied against the walls of the arteries when the heart beats
+and the bottom number (diastolic) is the force applied when heart is in a relaxed state
+range of 110/70 to 120/80 is normal.">
+        <br>
+        <label for="skinthickness">Skin Thickness (mm) :</label> 
+        <input class="form-input" type="text" name="skinthickness" placeholder="eg. 20">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="Skin thickness (epidermal surface to dermal fat inter- face), which is primarily determined by collagen content, 
+is greater in insulin-dependent diabetes mellitus (IDDM) patients who have been diabetic for >10 yr (11,12).">
+        <br>
+        <label for="insulin">Insulin Level (IU/mL): </label> 
+        <input class="form-input" type="text" name="insulin" placeholder="eg. 80">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title=" if you take 30 units of regular insulin daily, divide 1500 by 30. This equals 50. 
+This means your insulin sensitivity factor is 1:50,or that one unit of regular insulin will lower your blood sugar by about 50 mg/dL">
+        <br>
+        <label for="insulin">Body Mass Index (kg/m²) :</label>
+        <input class="form-input" type="text" name="bmi" placeholder=" eg. 23.1">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared. 
+A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9.">
+        <br>
+        <label for="dpf">Diabetes Pedigree Function :</label> 
+        <input class="form-input" type="text" name="dpf" placeholder="eg. 0.52">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="Diabetes pedigree function (a function which scores likelihood of diabetes based on family history) 
+Age: Age (years) Outcome: Class variable (0 if non-diabetic, 1 if diabetic)">
+        <br>
+        <label for="age">Age (years) :</label>  
+        <input class="form-input" type="text" name="age" placeholder="eg. 34">
+        <img src="static/info.png" width="20" data-toggle="tooltip" title="You can develop type 2 diabetes at any age, even during childhood. However, 
+You are more likely to develop type 2 diabetes if you are age 45 or older">
+        <br>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+        <!-- Footer -->
+        <div class='footer'>
+            
+                <div class="contact">
+                    <a target="_blank" href="https://github.com/mehboobpatel"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/maheboob-patel/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                    <a target="_blank" href=mailto:masterpatel786@yahoo.in><i class="far fa-envelope fa-lg contact-icon"></i></a>
+                </div>
+                <p class='footer-description'>Project by Maheboob Patel.</p>
+            </div>
+ 
+
+    </body>
+</html>
